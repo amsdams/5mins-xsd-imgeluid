@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:BGEWeg="http://geluidgegevens.nl/BGEweg"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:imvert="http://www.imvertor.org/schema/system"
+           xmlns:gml="http://www.opengis.net/gml/3.2"
+           xmlns:Algemeen="http://geluidgegevens.nl/algemeen"
+           xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0"
+           targetNamespace="http://geluidgegevens.nl/BGEweg"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0.0">
+   <xs:annotation>
+      <xs:appinfo source="http://www.imvertor.org/model-info/project">MIMLM</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/application">Informatiemodel Geluid</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/release">20191202</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/version">1.0</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/phase">0</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/uri">http://geluidgegevens.nl/BGEweg</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/generated">2020-04-14T07:13:25Z</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/xml-schema-info/file-location">Informatiemodel Geluid/unknown/v20191202/Informatiemodel_Geluid_BGEWeg_v1_0.xsd</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/xml-schema-info/generated">April 14, 2020 at 07:13:25</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/xml-schema-info/generator">1.59.3</xs:appinfo>
+      <xs:documentation source="http://www.imvertor.org/schema-info/conversion">
+        This schema is based on an UML specification, which is transformed by the Imvertor software. Imvertor modules are in the public domain, see http://www.imvertor.org.
+    </xs:documentation>
+   </xs:annotation>
+   <xs:annotation>
+      <xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
+         <gmlsf:ComplianceLevel>2</gmlsf:ComplianceLevel>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:import namespace="http://www.opengis.net/gml/3.2"
+              schemaLocation="../../../gml/3.2.1/gml.xsd"/>
+   <xs:import namespace="http://geluidgegevens.nl/algemeen"
+              schemaLocation="../../../Informatiemodel_Geluid/unknown/v20191202/Informatiemodel_Geluid_Algemeen_v1_0.xsd"/>
+   <xs:element name="Wegdeel"
+               type="BGEWeg:WegdeelType"
+               substitutionGroup="Algemeen:Geluidemissieobject">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Kleinste functioneel onafhankelijk stukje van een NEN 3610 Weg waarover de geluidemissie van wegverkeer constant kan worden verondersteld, gelet op het type wegdek, gemiddelde snelheid en verkeersintensiteiten.
+Explanation: Dit een op akoestische toepassingen toegespitste definitie van een BGT-wegdeel. De akoestische representatie van een geluidbronnen op de lokale weg, kent in tegenstellnig tot de Basisregistratie Grootschalige Topografie geen vlak-geometrie, maar een lijn-geometrie (zie ook: 'rijlijn').</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="WegdeelType">
+      <xs:complexContent>
+         <xs:extension base="Algemeen:GeluidemissieobjectType">
+            <xs:sequence>
+               <xs:element name="wegdektype" type="gml:ReferenceType">
+                  <xs:annotation>
+                     <xs:appinfo>
+                        <CodeListName>Wegdektype</CodeListName>
+                        <CodeListURI>https://www.infomil.nl/onderwerpen/geluid/regelgeving/wet-geluidhinder/wegverkeerslawaai/akoestisch-rapport/cwegdek/#Overzichtwegdekcorrecties</CodeListURI>
+                     </xs:appinfo>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Classificatie van typen toplagen op een wegdeel waarvan geluidreducerende effecten per type zijn vertaald naar correctiewaarden die gezamenlijk worden uitgedrukt met de bronterm Cwegdek.
+Explanation: De geluidreducerende effecten van stille wegdekken zijn in de bijlage III van het Reken- en meetvoorschrift geluid 2012 verrekend in de bronterm Cwegdek. Deze wegdekcorrectiefactoren zijn bepaald volgens de methode beschreven in AREG Blijlage IVd. In de CROW-publicatie nr. 316 'De wegdekcorrectie voor geluid van wegverkeer 2012' zijn de gegevens van enkele standaard RAW wegdektypen opgenomen. In de CROW-publicatie nr. 316 zijn de wegdekken ingedeeld in 15 categorieën. Dit zijn voor een deel standaard wegdektypen en voor een deel categorieën waar een aantal producten met soortgelijke eigenschappen in past. Bijvoorbeeld stille elementenverhardingen en de 2 categorieën dunne deklagen. Deze categorieën zijn bedoeld om in een vroeg stadium van het akoestisch onderzoek te rekenen met een benadering van de geluidreductie, zonder dat er al een keuze voor een specifiek product gemaakt hoeft te worden. Nadat de keuze voor een bepaald product is gemaakt, worden de akoestische berekeningen aangepast met de Cwegdek van dat product. Naast de wegdekcategorieën uit de publicatie zijn er ook veel producten in omloop, die veelal gebonden zijn aan een bepaalde producent. Voor deze producten kan de producent de Cwegdek laten vaststellen. De rapporten daarvan zullen hier als download beschikbaar zijn zodra Expertisecentrum Geluid van het RIVM deze heeft goedgekeurd.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="rijlijn" type="gml:CurvePropertyType">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Lijn die de plaats van de geluidafstraling representeert.
+Explanation: Heeft 2D-geometrie Het bevoegd gezag bepaalt zelf de locatie en de hoeveelheid rijlijnen die het nodig acht voor de bepaling van de basisgeluidemissie en de monitoring daarvan. Dit wordt ook wel de bronregisterlijn genoemd. Dit is de lijn die betrekking heeft op een gedeelte van een weg of spoorweg en die gebruikt wordt als rijlijn in de zin van bijlage III bij deze regeling of bronlijn in de zin van bijlage IV bij deze regeling bij bepaling van het equivalent geluidsniveau ten behoeve van de geluidproductie volgens de in bijlage V bij deze regeling gegeven regels. Het begin- en eindpunt van de lijn wordt bepaald door het punt in de ruimte waarop één van de akoestische eigenschappen van de geluidbron wijzigt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="intensiteitgegevens"
+                           nillable="false"
+                           type="Algemeen:IntensiteitgegevensWegType">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Gemiddeld aantal voertuigen per dagdeel, per voertuigcategorie.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="snelheidgegevens"
+                           nillable="false"
+                           type="Algemeen:SnelheidgegevensWegType">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Representatief te achten snelheid van voertuigen per dagdeel, per voertuigcategorie</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="WegdeelPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="BGEWeg:Wegdeel"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      <xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+   </xs:complexType>
+</xs:schema>

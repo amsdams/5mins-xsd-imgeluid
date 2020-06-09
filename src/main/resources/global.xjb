@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings
+    version="2.1"
+    xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:annox="http://annox.dev.java.net"  >
+
+    <jaxb:bindings schemaLocation="xsd/gml/3.2.1/geometryPrimitives.xsd" node="/xs:schema">
+		<jaxb:bindings node="//xs:complexType [@name='AbstractGriddedSurfaceType']">
+			<jaxb:class name="VeryAbstractGriddedSurfaceType"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:complexType [@name='AbstractGriddedSurfaceType']//xs:attribute[@name='rows']">
+			<jaxb:property name="agsRows"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+<jaxb:bindings schemaLocation="xsd/gml/3.2.1/coordinateOperations.xsd" node="/xs:schema">
+		<jaxb:bindings node="//xs:element [@name='ParameterValue']">
+			<jaxb:class name="parameterValueUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='parameterValue']">
+			<jaxb:class name="parameterValueLowercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='OperationParameter']">
+			<jaxb:class name="operationParameterUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='operationParameter']">
+			<jaxb:class name="operationParameterLowercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='Conversion']">
+			<jaxb:class name="conversionUppercase"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+	
+	<jaxb:bindings schemaLocation="xsd/gml/3.2.1/coordinateSystems.xsd" node="/xs:schema">
+		<jaxb:bindings node="//xs:element [@name='TimeCS']">
+			<jaxb:class name="timeCSUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='AffineCS']">
+			<jaxb:class name="affineCSUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='UserDefinedCS']">
+			<jaxb:class name="userDefinedCSUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='PolarCS']">
+			<jaxb:class name="polarCSUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='LinearCS']">
+			<jaxb:class name="linearCSUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='CylindricalCS']">
+			<jaxb:class name="cylindricalCSUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='VerticalCS']">
+			<jaxb:class name="verticalCSUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='SphericalCS']">
+			<jaxb:class name="sphericalCSUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='CartesianCS']">
+			<jaxb:class name="cartesianCSUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='EllipsoidalCS']">
+			<jaxb:class name="ellipsoidalCSUppercase"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+	
+<jaxb:bindings schemaLocation="xsd/gml/3.2.1/datums.xsd" node="/xs:schema">
+		<jaxb:bindings node="//xs:element [@name='primeMeridian']">
+			<jaxb:class name="datumPrimeMeridian"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='ellipsoid']">
+			<jaxb:class name="ellipsoidLowercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='Ellipsoid']">
+			<jaxb:class name="ellipsoidUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='TemporalDatum']">
+			<jaxb:class name="temporalDatumUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='ImageDatum']">
+			<jaxb:class name="imageDatumUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='EngineeringDatum']">
+			<jaxb:class name="engineeringDatumUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='VerticalDatum']">
+			<jaxb:class name="verticalDatumUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='GeodeticDatum']">
+			<jaxb:class name="geodeticDatumUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='SecondDefiningParameter']">
+			<jaxb:class name="secondDefiningParameterUppercase"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xs:element [@name='secondDefiningParameter']">
+			<jaxb:class name="secondDefiningParameterLowercase"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+</jaxb:bindings>
+
